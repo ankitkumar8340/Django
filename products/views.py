@@ -17,6 +17,8 @@ def about(request):
 def contact(request):
     return HttpResponse("Contact Page")
 
+def hello_products(request):
+    return HttpResponse("Hello from products apps")
 
 
 
