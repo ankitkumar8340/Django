@@ -1,0 +1,15 @@
+{%extends "greet/base.html" %}
+
+{%block title%} order {%endblock%}
+
+{%block content%}
+<h2>Products :({{order}})</h2>
+
+<ul>
+    {%for product in products %}
+    <li>{{product}}</li>
+    {%endfor%}
+</ul>
+
+{%endblock%}
+

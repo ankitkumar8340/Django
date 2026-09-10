@@ -5,15 +5,34 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def greet(request):
-    query = request.GET.get('q')
-    if query:
-        return HttpResponse(f"Hello, {query}!")
+    name = request.GET.get('name')
+    if name:
+        return HttpResponse(f"Hello, {name}!")
     else:
         return HttpResponse("Hello, Stranger")
 
 def calc(request):
     query1 = request.GET.get('a')
-    quuery2 = request.GET.get('b')
+    query2 = request.GET.get('b')
 
-    if (query1 & query2):
+    if query1 and query2:
+        query1 = int(query1)
+        query2 = int(query2)
         return HttpResponse(f" Sum = {query1 + query2}")
+    else:
+        return HttpResponse(" a or b is missing")
+
+def sort_products(request):
+    products = ['Laptop', 'Monitor', 'Keyboard', 'pc', 'Mouse']
+    order = request.GET.get('order', 'asc')
+
+    if order == 'asc':
+        products =sorted(products)
+    else:
+        products= sorted(products, reverse=True)
+
+    context ={
+        'products':products,
+        'order':order
+    }
+    return render(request, 'greet/product.html', context)
