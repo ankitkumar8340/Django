@@ -13,6 +13,8 @@ def product(request, product_id):
     else:
         return HttpResponse("enter a valid product id")
 
+        
+
 def student(request):
     return HttpResponse("Home page")
 
