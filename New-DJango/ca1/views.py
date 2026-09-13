@@ -17,6 +17,8 @@ def product(request, product_id):
 
 
 
+
+
 def student(request):
     return HttpResponse("Home page")
 
