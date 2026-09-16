@@ -19,6 +19,9 @@ def category_post(request, post_category, post_id):
 def blog_year(request, year):
     return HttpResponse(f"Archieve for year {year}")
 
+
+    
+
 def search(request):
     query = request.GET.get('q')
     if query:
@@ -30,3 +33,11 @@ def search(request):
 def blog_home(request):
     return render(request, 'blog/home.html')
 
+from django.test import TestCase
+
+class HomePageTest(TestCase):
+    def test_home_page(self):
+        self.assertEqual(2+2, 5)
+
+    def test_valid(self):
+        self.assertTrue(2+2, 5)
