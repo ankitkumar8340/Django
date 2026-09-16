@@ -20,7 +20,9 @@ def blog_year(request, year):
     return HttpResponse(f"Archieve for year {year}")
 
 
-    
+
+
+
 
 def search(request):
     query = request.GET.get('q')
