@@ -15,6 +15,8 @@ def about(request):
 def post_detail(request, post_id):
     return HttpResponse(f"you are viewing post number {post_id}")
 
+
+
 def category_post(request, post_category, post_id):
     return HttpResponse(f"Post {post_id} in Category: {post_category}")
 
