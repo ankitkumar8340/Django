@@ -8,8 +8,9 @@ def welcome(request):
     return HttpResponse("Welcome to my blog")
 
 def about(request):
-    
+
     return HttpResponse("Ankit kumar, Lpu")
+
 
 
 
