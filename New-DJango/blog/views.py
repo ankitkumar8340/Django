@@ -14,6 +14,7 @@ def about(request):
 
 
 
+
 def post_detail(request, post_id):
 
     return HttpResponse(f"you are viewing post number {post_id}")
